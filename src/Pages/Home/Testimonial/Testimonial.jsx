@@ -32,6 +32,7 @@ fetch('http://localhost:5000/reviews')
             <div className="flex flex-col items-center mx-24 my-16">
         <Rating
          style={{ maxWidth: 180 }}
+         
          value={review.rating}
          readOnly
          />

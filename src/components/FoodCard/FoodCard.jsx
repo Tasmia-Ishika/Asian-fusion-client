@@ -56,7 +56,7 @@ else{
         <figure>
           <img src={image} alt="Shoes" />
         </figure>
-        <p className=" absolute right-0 mr-4 mt-4 px-4 bg-slate-900 text-white">${price}</p>
+        <p className=" absolute right-0 mr-4 mt-4 px-4 bg-slate-900 text-white">BDT {price}</p>
         <div className="card-body flex flex-col items-center">
           <h2 className="card-title">{name}</h2>
           <p>{recipe}</p>

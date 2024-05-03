@@ -4,6 +4,8 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from "../../Providers/Authprovider";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+ import SocialLogin from "../Shared/SocialLogin/SocialLogin";
+// import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
 const SignUp = () => {
 const {
@@ -15,25 +17,36 @@ const {
     const {createUser, updateUserProfile} = useContext(AuthContext);
     const navigate = useNavigate();
 
-    const onSubmit = data => {
-    console.log(data);
+const onSubmit = data => {
+    
     createUser(data.email, data.password)
     .then(result => {
         const loggedUser = result.user;
         console.log(loggedUser);
         updateUserProfile(data.name, data.photoURL)
         .then(() => {
-console.log("user profile info updated")
-reset();
-Swal.fire({
-    position: "top-end",
-    icon: "success",
-    title: "User created successfully",
-    showConfirmButton: false,
-    timer: 1500
-  });
-navigate('/');
-
+            const saveUser = {name: data.name, email : data.email}
+            fetch('http://localhost:5000/users', {
+                method: 'POST',
+                headers: {
+                    'content-type' : 'application/json'
+                },
+                body : JSON.stringify(saveUser)
+            })
+            .then(res => res.json())
+            .then(data => {
+                if(data.insertedId){
+                    reset();
+                    Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "User created successfully",
+                    showConfirmButton: false,
+                    timer: 1500
+              });
+                    navigate('/');
+                }
+            })
         })
         .catch(error => console.log(error))
     })
@@ -94,8 +107,9 @@ return (
             <div className="form-control mt-6">
                 <input className="btn btn-outline border-b-4 bg-slate-100 border-0 border-orange-400 mt-4" type="submit" value="Sign Up"/>
             </div>
-        </form>
-        <p className='text-center pb-7'><small>Already have an account? <Link className='text-orange-400 font-bold' to="/login">Sign in</Link></small></p>
+        </form> 
+        <p className='text-center pb-2'><small>Already have an account? <Link className='text-orange-400 font-bold' to="/login">Sign in</Link></small></p>
+         <SocialLogin></SocialLogin>
         </div>
     </div>
     </div>

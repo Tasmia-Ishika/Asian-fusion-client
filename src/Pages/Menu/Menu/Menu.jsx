@@ -7,7 +7,7 @@ import saladImg from '../../../assets/menu/salad-bg.jpg';
 import soupImg from '../../../assets/menu/soup-bg.jpg';
 import useMenu from '../../../hooks/useMenu';
 import SectionTitle from '../../../components/SectionTitle/SectionTitle';
-import MenuCategory from '../`MenuCategory/MenuCategory';
+import MenuCategory from '../../Dashboard/MyCart/`MenuCategory/MenuCategory';
 const Menu = () => {
   const [menu] = useMenu();
   const desserts = menu.filter(item => item.category === 'dessert');

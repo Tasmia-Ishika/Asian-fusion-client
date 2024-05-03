@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 
 const MyCart = () => {
   const [cart, refetch] = useCart();
+  // const totalPrice = cart.reduce((total, item) => total + item.price, 0);
   console.log(cart);
   // how does reduce work!!!
   const total = cart.reduce((sum, item) => item.price + sum, 0);
@@ -42,9 +43,9 @@ const MyCart = () => {
             <Helmet>
                 <title>Asian Bistro | Cart</title>
             </Helmet>
-          <div className="uppercase font-bold h-[60px] flex justify-evenly items-center gap-7 m-4">
+          <div className=" font-bold h-[60px] flex justify-evenly items-center gap-7 m-4">
             <h1 className="text-2xl">Total Item = {cart.length}</h1>
-            <h1 className="text-2xl">Total price = ${total}</h1>
+            <h1 className="text-2xl">Total Price =  {total} BDT</h1>
             <button className="btn btn-outline btn-warning btn-sm">PAY</button>
           </div>
           {/* Table -------->*/}
@@ -77,7 +78,7 @@ const MyCart = () => {
           </td>
           <td className="font-bold">
            {item.name}</td>
-          <td className="text-amber-600 font-extrabold">${item.price}</td>
+          <td className="text-amber-600 font-extrabold ">BDT {item.price}</td>
           <td>
           <button onClick={() => handleDelete(item)}  className="btn  bg-red-600  text-white"><RiDeleteBin5Fill size={18}/></button>
           </td>
