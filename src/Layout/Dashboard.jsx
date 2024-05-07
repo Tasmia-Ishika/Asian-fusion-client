@@ -36,8 +36,8 @@ const Dashboard = () => {
 isAdmin ? <>
  <li className="font-bold uppercase"><NavLink to="/dashboard/profile"><FaUserCircle size={22} />Admin</NavLink></li> 
       <li className="font-bold uppercase"><NavLink to="/dashboard/additems"><IoIosAddCircle size={22} />Add Items</NavLink></li>
-     <li className="font-bold uppercase"><NavLink to="/dashboard/history"><MdOutlineManageSearch size={24} />Manage Items</NavLink></li>
-      <li className="font-bold uppercase"><NavLink to="/dashboard/history"><FaCalendarCheck size={21} />Manage Reservations</NavLink></li> 
+     <li className="font-bold uppercase"><NavLink to="/dashboard/manageItems"><MdOutlineManageSearch size={24} />Manage Items</NavLink></li>
+      <li className="font-bold uppercase"><NavLink to="/dashboard/manageReservation"><FaCalendarCheck size={21} />Manage Reservations</NavLink></li> 
       <li className="font-bold uppercase"><NavLink to="/dashboard/allusers"><HiUsers size={24} />All Users</NavLink></li>
      
 </> 

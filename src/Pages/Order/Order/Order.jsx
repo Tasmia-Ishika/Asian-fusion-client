@@ -19,20 +19,25 @@ const Order = () => {
   const pizza = menu.filter(item => item.category === 'pizza');
   const salad = menu.filter(item => item.category === 'salad');
   const drinks = menu.filter(item => item.category === 'drinks');
+  const popular = menu.filter(item => item.category === 'popular');
     return (
         <div>
              <Helmet>
         <title>Asian Bistro | Order Food</title>
       </Helmet>
            <Cover img={orderCoverImg} title="Order Food"></Cover>
-           <Tabs defaultIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
-  <TabList>
-    <Tab>Salad</Tab>
-    <Tab>Pizza</Tab>
-    <Tab>Soup</Tab>
-    <Tab>Dessert</Tab>
-    <Tab>Drinks</Tab>
+           <Tabs  defaultIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
+  <TabList className="text-center mt-5 mb-3 font-bold  border-amber-400">
+    <Tab><button className='text-lg rounded p-2 hover:bg-amber-400'>Popular</button></Tab>
+    <Tab><button className='text-lg rounded p-2 hover:bg-amber-400'>Salad</button></Tab>
+    <Tab><button className='text-lg rounded p-2 hover:bg-amber-400'>Pizza</button></Tab>
+    <Tab><button className='text-lg rounded p-2 hover:bg-amber-400'>Soup</button></Tab>
+    <Tab><button className='text-lg rounded p-2 hover:bg-amber-400'>Dessert</button></Tab>
+    <Tab><button className='text-lg rounded p-2 hover:bg-amber-400'>Drinks</button></Tab>
   </TabList>
+  <TabPanel>
+  <OrderTab items={popular}></OrderTab>
+  </TabPanel>
   <TabPanel>
    <OrderTab items={salad}></OrderTab>
   </TabPanel>
@@ -48,6 +53,7 @@ const Order = () => {
   <TabPanel>
   <OrderTab items={drinks}></OrderTab>
   </TabPanel>
+  
 </Tabs>
         </div>
     );
