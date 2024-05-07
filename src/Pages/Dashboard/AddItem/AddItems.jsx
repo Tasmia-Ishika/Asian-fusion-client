@@ -51,7 +51,7 @@ const AddItems = () => {
   return (
  <div >
 <SectionTitle heading="Add Item" subHeading="What's New?"></SectionTitle>
-    <div className="border-double border-4 border-yellow-400 rounded-2xl p-10 mb-10">
+    <div className="border-double border-4 border-yellow-400 rounded-2xl p-10 m-10">
     <form onSubmit={handleSubmit(onSubmit)}>
       <label className="form-control w-full ">
   <div className="label">

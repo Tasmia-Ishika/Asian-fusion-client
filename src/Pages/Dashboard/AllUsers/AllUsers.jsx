@@ -59,7 +59,7 @@ const handleMakeAdmin = user =>{
     }
 
     return (
-        <div className="w-full">
+        <div className="w-full m-10">
             <div >
                 <h2 className="text-3xl text-center font-bold mt-5">All Users</h2>
                 <h2 className="text-3xl font-semibold my-4 text-center">Total Users: {users.length}</h2>

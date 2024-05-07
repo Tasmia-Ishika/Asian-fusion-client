@@ -20,9 +20,9 @@ const ManageItems = () => {
             cancelButtonColor: "#d33",
             confirmButtonText: "Yes, delete it!"
         }).then(async (result) => {
-            if (result.isConfirmed) {
+        if (result.isConfirmed) {
                 const res = await axiosSecure.delete(`/menu/${item._id}`);
-                // console.log(res.data);
+                 console.log(res.data);
                 if (res.data.deletedCount > 0) {
 refetch();
                     Swal.fire({
@@ -40,7 +40,7 @@ refetch();
     }
 
     return (
-        <div>
+        <div className="m-10">
             <SectionTitle heading="Manage All Items" subHeading="Hurry up"></SectionTitle>
             <div>
                 <div className="overflow-x-auto">

@@ -55,7 +55,7 @@ const UpdateItem = () => {
     return (
         <div>
             <SectionTitle heading="Update an Item" subHeading="Refresh info"></SectionTitle>
-            <div className="border-double border-4 border-yellow-400 rounded-2xl p-10 mb-10">
+            <div className="border-double border-4 border-yellow-400 rounded-2xl p-10 m-10">
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="form-control w-full my-6">
                         <label className="label">

@@ -20,8 +20,8 @@ const Dashboard = () => {
   return (
         <div className="drawer lg:drawer-open">
   <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-  <div className="drawer-content flex flex-col items-center justify-center ">
-    <label htmlFor="my-drawer-2" className="btn btn-outline drawer-button lg:hidden"><TiThMenu size={22}></TiThMenu>
+  <div className="drawer-content flex flex-col  justify-center ">
+    <label htmlFor="my-drawer-2" className="btn drawer-button lg:hidden"><TiThMenu size={22}></TiThMenu>
   </label>
    <Outlet></Outlet>
     
@@ -46,7 +46,7 @@ isAdmin ? <>
 
 <li className="font-bold uppercase"><NavLink to="/dashboard/profile"><FaUserCircle size={22} />Profile</NavLink></li>
        <li className="font-bold uppercase"><NavLink to="/dashboard/reservation"><FaCalendarPlus size={21} />Reservations</NavLink></li>
-      <li className="font-bold uppercase"><NavLink to="/dashboard/history"><FaRegCreditCard size={20} />Payment History</NavLink></li> 
+      <li className="font-bold uppercase"><NavLink to="/dashboard/paymentHistory"><FaRegCreditCard size={20} />Payment History</NavLink></li> 
       <li className="font-bold uppercase">
         <NavLink to="/dashboard/mycart"><TiShoppingCart size={24} />My Cart
         <span className="badge badge-warning">+{cart?.length || 0}</span>
