@@ -85,19 +85,19 @@ const CheckoutForm = () => {
                     transactionId: paymentIntent.id,
                     date: new Date(), // utc date convert. use moment js to 
                     cartIds: cart.map(item => item._id),
-                    menuItemIds: cart.map(item => item.menuId),
+                    menuItemIds: cart.map(item => item.menuItemId),
                     status: 'Completed'
                 }
 
                 const res = await axiosSecure.post('/payments', payment);
-                console.log('payment saved', res.data);
+                console.log(payment, 'payment saved', res.data);
                 refetch();
                 if (res.data?.paymentResult?.insertedId) {
                     Swal.fire({
                         position: "top-end",
                         icon: "success",
-                        title: "Order Completed. Your order is in process now.",
-                        showConfirmButton: false,
+                        title: "Order Confirmed. Your order is now in processing to deliver",
+  showConfirmButton: false,
                         timer: 1500
                     });
                     navigate('/dashboard/paymentHistory')
@@ -131,7 +131,7 @@ const CheckoutForm = () => {
                 Pay
             </button>
             <p className="text-red-600">{error}</p>
-            {transactionId && <p className=" font-bold text-green-600"> Your transaction id: {transactionId}</p>}
+            {transactionId && <p className="text-green-600"> Your transaction id: {transactionId}</p>}
         </form>
        </div>
     );
