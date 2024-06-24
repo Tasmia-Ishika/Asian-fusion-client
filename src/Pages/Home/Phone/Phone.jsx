@@ -9,7 +9,7 @@ const Phone = () => {
             ></SectionTitle>
 <div className="flex grid grid-cols-2 md:grid-cols-1 lg:grid-cols-2 mt-4">
 <div className="grid justify-items-center">
-<div className="mockup-phone border-primary">
+<div className="mockup-phone border-warning">
   <div className="camera"></div>
   <div className="display">
     <div className="artboard artboard-demo phone-1"><div className="carousel carousel-vertical rounded-box h-96">
