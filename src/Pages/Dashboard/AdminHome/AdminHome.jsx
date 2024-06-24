@@ -7,8 +7,8 @@ import { IoHeartSharp } from "react-icons/io5";
 import { FaUtensils } from "react-icons/fa";
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid,  PieChart, Pie,  Legend } from 'recharts';
 
-const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
-const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
+const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#fe0088', '#7d29d5'];
+const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#fe0088', '#7d29d5'];
 
 
 
@@ -93,6 +93,7 @@ const pieChartData = chartData.map(data => {
     <div className="stat-value">{stats.orders}</div>
     <div className="stat-desc">↘︎ 90 (14%)</div>
   </div>
+
   <div className="stat">
     <div className="stat-figure text-secondary">
    < FaUtensils className="text-3xl text-emerald-400"/>

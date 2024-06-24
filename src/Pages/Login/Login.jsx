@@ -13,10 +13,7 @@ const Login = () => {
   const {signIn} = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
-
   const from = location.state?.from?.pathname || "/";
-
-
 useEffect ( () => {
     loadCaptchaEnginge(6);
 }, [])
@@ -52,7 +49,6 @@ useEffect ( () => {
         navigate(from, {replace: true});
         })
     }
-
 const handleValidateCaptcha = (e) =>{
 const user_captcha_value = e.target.value;
 if(validateCaptcha(user_captcha_value)){
@@ -66,7 +62,7 @@ setDisabled(true);
         <>
          <Helmet>
                 <title>Asian Bistro | Sign In</title>
-            </Helmet>
+         </Helmet>
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col md:flex-row-reverse">
                 <div className="text-center md:w-1/2 lg:text-left">
@@ -98,15 +94,13 @@ setDisabled(true);
                             </label>
                             <input onBlur={handleValidateCaptcha}  type="text" name="captcha" placeholder="Enter Captcha" className="input input-bordered" required />
                             {/* <button  className="btn btn-outline btn-xs mt-3 border-b-4 bg-slate-100 border-0 border-orange-400">Validate</button> */}
-                            
-                        </div>
-                        <div className="form-control mt-6">
+                    </div>
+                    <div className="form-control mt-6">
                     <input disabled={disabled} className="btn btn-outline border-b-4 bg-slate-100 border-0 border-orange-400 mt-4" type="submit" value="Login" />
                         </div>
                         <p className='text-center'><small>New Here? <Link className='text-orange-400 font-bold' to="/signup">Create an account</Link></small></p>
                         <SocialLogin></SocialLogin>
                     </form>
-                   {/* 78-8 */}
                 </div>
             </div>
         </div>

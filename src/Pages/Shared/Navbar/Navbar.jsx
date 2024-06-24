@@ -18,6 +18,7 @@ const Navbar = () => {
   }
   
   const navOptions = <>
+  
   <li><Link  to="/">Home</Link></li>
   <li><Link  to="/menu">Menu</Link></li>
   <li><Link to="/order/salad">Order Food</Link></li>
@@ -36,15 +37,17 @@ const Navbar = () => {
                 <li><Link to="/login">Sign in</Link></li>
             </>
         }
-        <li>
+
+       
+       <li>
       <Link to="/dashboard/mycart">
       <button className="btn">
         <TiShoppingCart size={30} color="orange"/>
-  <div className="badge badge-warning">+{cart?.length || 0}</div>
+  <div className="badge badge-warning">+{cart?.length | 0}</div>
 </button>
-
       </Link>
     </li>
+     
  </>
     return (
         <>

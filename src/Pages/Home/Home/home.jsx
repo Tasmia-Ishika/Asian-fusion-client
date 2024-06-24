@@ -4,6 +4,8 @@ import Category from "../Category/Category";
 import PopularMenu from "../PopularMenu/PopularMenu";
 import Testimonial from "../Testimonial/Testimonial";
 import Featured from "../featured/Featured";
+import Queries from "../Queries/Queries";
+import Phone from "../Phone/Phone";
 
 const home = () => {
     return (
@@ -16,6 +18,8 @@ const home = () => {
           <PopularMenu></PopularMenu>
           <Featured></Featured> 
           <Testimonial></Testimonial>
+          <Phone></Phone>
+          <Queries></Queries>
         </div>
     );
 };
